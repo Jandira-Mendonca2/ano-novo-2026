@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Ano novo 2026</title>
+</head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #3a393b;
+    /* background: #111; */
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.text{
+    position: absolute;
+    top: 200px;
+    text-align: center;
+    /* font-size: 1vw; */
+    font-size: 2vw;
+    margin-left: -90px;
+}
+#time{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;            
+    justify-content: center;            
+    max-width: 100%;
+}
+#time .circle{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+#time .circle::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 10px solid #1b1a1c;
+    border-radius: 50%;
+}
+#time .circle::after{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #2f2e33;
+    border-radius: 50%;
+    border: 15px solid #4d4c51;
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.25), 
+    0 10px 10px rgba(0, 0, 0, 0.75),
+    0 -2px 2px rgba(255, 255, 255, 0.5), 
+    inset 0 4px 2px rgba(0, 0, 0, 0.25), 
+    inset 0 -2px 2px rgba(255, 255, 255, 0.5);
+}
+#time .circle svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+#time .circle svg circle{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 8;
+    stroke: var(--clr);
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+}
+#time div{
+    position: absolute;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+    z-index: 10000;
+    color: var(--clr);
+    font-size: 1.65em;
+    transform: translateY(-5px);
+}
+#time div span{
+    position: absolute;
+    transform: translateX(-50%) translateY(-15px);
+    font-size: 0.25em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+.title{
+    font-family: 'Bad script', cursive;
+    font-size: 2.2vw;
+    font-family: 500;
+    padding: 20px;
+    margin: 30px;
+    color: transparent;
+    text-align: center;
+    line-height: 10vw;
+}
+.title span{
+    text-align: center;
+    font-size: 4em;
+    font-weight: 300;
+    animation: animate 3s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+.langWrap{
+    background: #333;
+}
+a{ 
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 15px;
+    font-weight: bold;
+    background: #555656;
+    font-size: 18px;
+}
+a.active{
+   background: #f21313;
+}
+.content{
+    margin-top: 20px;
+    font-size: 20px;
+}
+@keyframes animate{
+    0%{
+        color:#fff;
+        filter: blur(2px) hue-rotate(0deg);
+        text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff, 0 0 200px #00b3ff, 0 0 300px #00b3ff, 0 0 400px #00b3ff;
+    }
+    30%, 70%{
+        color:#fff;
+        filter: blur(2px) hue-rotate(360deg);
+        text-shadow: 0 0 10px #ff0015, 0 0 20px #ff0015, 0 0 40px #ff0015, 0 0 80px #ff0015, 0 0 120px #ff0015, 0 0 200px #ff0015;
+    }
+    100%{
+        color: transparent;
+        box-shadow: none;
+        filter: blur(2px) hue-rotate(0deg);
+
+    }
+}
+.newYear{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 2fr 2fr;
+    z-index: 10000000;
+    display: none;
+    text-align: center;
+}
+.texto{
+    font-family: 'Bad script', cursive;
+    color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+
+}
+
+    </style>
+<body>
+
+    <div id="time">
+        <div class="text">
+            <!-- <h1>Contagem Regressiva para 2025</h1> -->
+        </div>
+        <div class="circle" style="--clr:#1eb9ff;" >
+            <svg>
+                <circle cx="70" cy="70" r="70" id="dd"></circle>
+            </svg>
+            <div id="days">00<br><span>Days</span></div>
+        </div>
+        <div class="circle" style="--clr:#ff2972;" >
+            <svg>
+                <circle cx="70" cy="70" r="70" id="hh"></circle>
+            </svg>
+            <div id="hours">00<br><span>Hours</span></div>
+        </div>
+        <div class="circle" style="--clr:#fe0000;" >
+            <svg>
+                <circle cx="70" cy="70" r="70" id="mm"></circle>
+            </svg>
+            <div id="minutes">00<br><span>Minutes</span></div>
+        </div>
+        <div class="circle" style="--clr:#04fc43;" >
+            <svg>
+                <circle cx="70" cy="70" r="70" id="ss"></circle>
+            </svg>
+            <div id="seconds">00<br><span>Seconds</span></div>
+        </div>
+    </div>
+
+    <div class="newYear">
+        <div class="langWrap">
+            <a href="#" language="portuguese" class="active">PT</a>
+            <a href="#" language="papiamento">PAP</a>
+            <a href="#" language="english">EN</a>
+        </div>
+        <div class="content">
+            <h2 class="title">
+                <span style="--i:1">F</span>
+                <span style="--i:2">e</span>
+                <span style="--i:3">l</span>
+                <span style="--i:4">i</span>
+                <span style="--i:5">z</span>
+                <span style="--i:6; margin-left:5vw;">A</span>
+                <span style="--i:7">n</span>
+                <span style="--i:8">o</span>
+                <span style="--i:9; margin-left:5vw;">N</span>
+                <span style="--i:10">o</span>
+                <span style="--i:11">v</span>
+                <span style="--i:12">o</span>
+                <span style="--i:13; margin-left:5vw;">2</span>
+                <span style="--i:14">0</span>
+                <span style="--i:15">2</span>
+                <span style="--i:16">6</span>
+            </h2>
+            <p class="description">Que este novo ano seja uma jornada de reflexão e crescimento, onde possamos aprender com as experiências passadas e construir um futuro cheio de esperança e oportunidades.
+                Que a prosperidade e a abundância acompanhem cada passo que você der em 2025 e que este ano seja repleto de realizações e sucesso em todos os aspectos da vida.
+            
+                Que a saúde seja sua maior riqueza e que você encontre equilíbrio e bem-estar em todos os momentos deste novo ano. Cuide de si mesmo e daqueles que ama.
+            
+                Desejo que o amor e a amizade aqueçam o seu coração em 2025. Que você cultive relacionamentos significativos e encontre alegria nas conexões com os outros. Feliz Ano Novo!</p>
+        </div>
+    </div>
+
+    <script>
+        let days = document.getElementById('days');
+        let hours = document.getElementById('hours');
+        let minutes = document.getElementById('minutes');
+        let seconds = document.getElementById('seconds');
+
+        let dd = document.getElementById('dd');
+        let hh = document.getElementById('hh');
+        let mm = document.getElementById('mm');
+        let ss = document.getElementById('ss');
+
+        let endDate = '01/01/2026 00:00:00';
+
+        let x =setInterval(function(){
+          let now = new Date(endDate).getTime();
+          let countDown = new Date().getTime();
+          let distance = now - countDown;
+
+          //calculo do tempo para dias, minutos e segundos
+          let d = Math.floor(distance / (1000 * 60 * 60 * 24));
+          let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          let s = Math.floor((distance % (1000 * 60)) / (1000));
+
+          //saida do resultado no elemento com id
+          days.innerHTML = d + "<br><span>Days</span>";
+          hours.innerHTML = h + "<br><span>Hours</span>";
+          minutes.innerHTML = m + "<br><span>Minutes</span>";
+          seconds.innerHTML = s + "<br><span>Seconds</span>";
+
+          //Animacao stroke
+          dd.style.strokeDashoffset = 440 - (440 * d) / 365;
+          //365 dias em um ano
+          hh.style.strokeDashoffset = 440 - (440 * h) / 24;
+          //24 hora em um dia
+          mm.style.strokeDashoffset = 440 - (440 * m) / 60;
+          //60 minutos em uma hora
+          ss.style.strokeDashoffset = 440 - (440 * s) / 60;
+          //60 segundos em um minutos
+
+          //Se a contagem acabar escreve feliz ano novo
+
+          if(distance < 0){
+            clearInterval(x);
+            document.getElementById("time").style.display = "none";
+            document.querySelector(".newYear").style.display = "block";
+
+            const langEl =  document.querySelector('.langWrap');
+        const link = document.querySelectorAll('a');
+        const titleEl = document.querySelector('.title');
+        const descrEl = document.querySelector('.description');
+
+        link.forEach(el =>{
+            el.addEventListener('click', () =>{
+                langEl.querySelector('.active').classList.remove('active');
+                el.classList.add('active');
+
+                const attr = el.getAttribute('language');
+
+                titleEl.textContent = data[attr].title;
+                descrEl.textContent = data[attr].description;
+            })
+        });
+
+        var data = {
+            "portuguese":
+            {
+                "title": "Feliz Ano Novo",
+                "description":
+                    "A chegada de um novo ano é sempre um convite à renovação. O Réveillon desperta esperança, gratidão e o desejo de recomeçar com mais leveza. Cada mensagem de Ano Novo traz inspiração para celebrar conquistas, aprender com desafios e fortalecer laços. Que 2026 seja um ciclo de prosperidade, saúde e felicidade ao lado de quem se ama."
+            },
+            "papiamento":
+            {
+                "title": "Felis aña nobo",
+                "description":
+                    "E yegada di un aña nobo semper ta un invitacion pa renobacion. Aña nobo ta lanta speransa, gratitut, i e deseo pa kuminsá di nobo ku mas lihé. Kada mensahe di Aña Nobo ta trese inspirashon pa selebrá logronan, siña for di retonan, i fortalesé lasonan. Ku 2026 ta un siklo di prosperidat, salú i felisidat huntu ku esnan ku bo ta stima."
+            },
+            "english":
+            {
+                "title": "Happy New Year",
+                "description":
+                    "The arrival of a new year is always an invitation to renewal. New Year's Eve awakens hope, gratitude, and the desire to start anew with more lightness. Each New Year's message brings inspiration to celebrate achievements, learn from challenges, and strengthen bonds. May 2026 be a cycle of prosperity, health, and happiness alongside those you love."
+            },
+        }
+          }
+
+          })
+    </script>
+</body>
+</html>
